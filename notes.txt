@@ -1,0 +1,10 @@
+For react documentation:
+    reactjs.org
+
+
+For creating react app:
+    npx create-react-app <app_name>
+
+For running react app:
+    npm run start
+    
