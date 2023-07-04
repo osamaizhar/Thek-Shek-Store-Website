@@ -8,3 +8,10 @@ For creating react app:
 For running react app:
     npm run start
     
+Shorcuts:
+
+    1. ctrl+arrow keys navigates to components directly
+    2. shift+alt+keydown copies the code block that is highlighted and pastes it at the bottom
+    3. shift+enter directly jumps to all different places where the keyword appears when using ctrl+f find feature
+
+    
