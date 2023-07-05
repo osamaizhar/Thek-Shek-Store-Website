@@ -14,4 +14,7 @@ Shorcuts:
     2. shift+alt+keydown copies the code block that is highlighted and pastes it at the bottom
     3. shift+enter directly jumps to all different places where the keyword appears when using ctrl+f find feature
 
-    
+For generating react template code from es7 react code snippets extension:
+    racfe => react arrow function export component
+
+//import React from 'react' in react 18 you don't need this line

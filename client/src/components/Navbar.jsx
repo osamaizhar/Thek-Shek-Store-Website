@@ -88,7 +88,7 @@ const Navbar = () => {
           <NavLink>
             {/* This section of code deals with light and dark more */}
             <Icon
-              as={colorMode === "light " ? MoonIcon : SunIcon}
+              as={colorMode === "light" ? MoonIcon : SunIcon }
               alignSelf="center"
               onClick={() => toggleColorMode()} // anonymous function here basically only runs the toggleColorMode function when icon is clicked
             />
@@ -126,7 +126,7 @@ const Navbar = () => {
           {" "}
           {/*Shows the hamburger menu drop down icons  */}
           <Stack as="nav" spacing={4}>
-          {/* key={link.linkName}: This sets the unique key for each rendered <NavLink> component. The key is typically used by React to optimize rendering and track component updates.
+            {/* key={link.linkName}: This sets the unique key for each rendered <NavLink> component. The key is typically used by React to optimize rendering and track component updates.
 path={link.path}: This sets the path prop of the <NavLink> component, likely specifying the URL or path that the link should navigate to. */}
             {links.map(
               (
