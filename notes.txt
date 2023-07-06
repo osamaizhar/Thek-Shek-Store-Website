@@ -18,3 +18,5 @@ For generating react template code from es7 react code snippets extension:
     racfe => react arrow function export component
 
 //import React from 'react' in react 18 you don't need this line
+
+Research and practice react useState and react Redux
