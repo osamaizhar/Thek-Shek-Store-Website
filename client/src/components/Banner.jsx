@@ -8,67 +8,53 @@ import { useState } from 'react'
 
 const Banner = () => {
     const [baseMenuDispaly, setDisplay] = useState(false)
+    const brands = [
+        {
+            name: 'apple'
+        },
+        {
+            name: 'samsung'
+        },
+        {
+            name: 'infinix'
+        },
+        {
+            name: 'realme'
+        },
+        {
+            name: 'audionic'
+        },
+        {
+            name: 'lenevo'
+        }
+    ]
     return (
-        <Box display={'flex'} className='main-herocl'>
-            <Box w="25%" p='5' height={'auto'} maxHeight={'30rem'} shadow={'lg'} className='categories'>
+        <Box display={'flex'} flexDirection={{ lg: "row", md: "column", base: "column" }} className='main-herocl'>
+            <Box w={{ lg: "25%", md: "100%", base: "100%" }} p='5' height={'auto'} maxHeight={'30rem'} shadow={'lg'} className='categories'>
                 <Heading border="1px" p="2" onClick={() => setDisplay((prev) => !prev)} as={'h5'} size="md"> <ArrowUpDownIcon /> Browser Categories</Heading>
-                <List spacing={3} display={{ base: baseMenuDispaly ? 'block' : 'none', md: 'block' }} pt="3">
-                    <ListItem border={"1px"} borderBottom={"0"} p="2" bgColor={'gray.100'}>
-                        <Link to="/hello">
-                            <CheckCircleIcon color={"green.300"} boxSize={5} mx="4" />
-                            <span>
-                                iPhone / Apple
-                            </span>
-                        </Link>
-                    </ListItem>
-                </List>
-                <List spacing={3} display={{ base: baseMenuDispaly ? 'block' : 'none', md: 'block' }}>
-                    <ListItem border={"1px"} borderBottom={"0"} p="2" bgColor={'gray.100'}>
-                        <Link to="/hello">
-                            <CheckCircleIcon color={"green.300"} boxSize={5} mx="4" />
-                            <span>
-                                Samsung
-                            </span>
-                        </Link>
-                    </ListItem>
-                </List>
-                <List spacing={3} display={{ base: baseMenuDispaly ? 'block' : 'none', md: 'block' }}>
-                    <ListItem border={"1px"} borderBottom={"0"} p="2" bgColor={'gray.100'}>
-                        <Link to="/hello">
-                            <CheckCircleIcon color={"green.300"} boxSize={5} mx="4" />
-                            <span>
-                                Ininix
-                            </span>
-                        </Link>
-                    </ListItem>
-                </List>
-                <List spacing={3} display={{ base: baseMenuDispaly ? 'block' : 'none', md: 'block' }}>
-                    <ListItem border={"1px"} borderBottom={"0"} p="2" bgColor={'gray.100'}>
-                        <Link to="/hello">
-                            <CheckCircleIcon color={"green.300"} boxSize={5} mx="4" />
-                            <span>
-                                Realme
-                            </span>
-                        </Link>
-                    </ListItem>
-                </List>
-                <List spacing={3} display={{ base: baseMenuDispaly ? 'block' : 'none', md: 'block' }}>
-                    <ListItem border={"1px"} p="2" bgColor={'gray.100'}>
-                        <Link to="/hello">
-                            <CheckCircleIcon color={"green.300"} boxSize={5} mx="4" />
-                            <span>
-                                Audionic
-                            </span>
-                        </Link>
-                    </ListItem>
-                </List>
+                {
+                    brands.map((brand) => {
+                        return (
+                            <List spacing={3} display={{ base: baseMenuDispaly ? 'block' : 'none', md: 'block' }} pt="3">
+                                <ListItem border={"1px"} p="2" bgColor={'gray.100'}>
+                                    <a href={`#${brand.name}`}>
+                                        <CheckCircleIcon color={"green.300"} boxSize={5} mx="4" />
+                                        <span>
+                                            {brand.name.toUpperCase()}
+                                        </span>
+                                    </a>
+                                </ListItem>
+                            </List>
+                        )
+                    })
+                }
             </Box>
-            <Box w="75%" className='banner-main'>
+            <Box w={{ lg: "75%" }} className='banner-main'>
                 <div className='home-hero'>
                     <Box
                         m="auto"
                         p="6"
-                        w={{ base: '30%' }}
+                        w={{ base: '50%', md: "40%", lg: "30%" }}
                         display={'flex'}
                         flexDirection={'column'}
                         justifyContent={'center'}

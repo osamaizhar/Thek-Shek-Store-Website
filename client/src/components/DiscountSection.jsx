@@ -39,19 +39,21 @@ const DiscountSection = () => {
             <Heading fontSize='4xl' py="20px">
                 Hot Selling Item 🔥
             </Heading>
-            <Stack align='stretch' direction={['column', 'row']}>
-                <Box p={5} shadow='md' borderWidth='1px' w="50%" h="500px">
-                    <Stack direction={['column', 'row']}>
-                        <Box w="10%">
+            <Box display={"flex"} flexDirection={{ lg: "row", md: "column", base: "column" }}>
+                <Box p={5} shadow='md' borderWidth='1px' w={{ lg: "50%", md: "100%", sm: "100%" }}>
+                    <Box display={"flex"} flexDirection={{ lg: "row", md: "row", base: "column" }}>
+                        <Box mx={{base:"auto"}} display={"flex"} flexDirection={{ lg: "column", md: "column", base: "row" }}  gap={"5px"}>
 
                             {
                                 React.Children.toArray(
                                     items.all.map((item, id) => {
                                         return (
                                             <Image
-                                                p="2"
-                                                my="2"
+                                                p="10px"
+                                                my="10px"
                                                 border={'2px'}
+                                                height={"100px"}
+                                                width={"100px"}
                                                 src={item.thumbnail}
                                                 onClick={() => updateThumnail(id)}
                                             />
@@ -63,9 +65,9 @@ const DiscountSection = () => {
                         <Box w="90%">
                             <Image src={items.active.main} w="100%" objectFit='contain' h={"80%"} />
                         </Box>
-                    </Stack>
+                    </Box>
                 </Box>
-                <Box w="50%" h="500px">
+                <Box w={{ lg: "50%", md: "100%", sm: "100%" }}>
                     <VStack align='stretch' spacing={'2'} py="20px" px="15px">
                         <Heading as={Link} to="/" fontSize='5xl' color={"teal.400"}>
                             Gaming Earphones
@@ -82,7 +84,7 @@ const DiscountSection = () => {
                                 2,000
                             </Text>
                         </HStack>
-                        <Select py="20px" placeholder='Select Qantity'>
+                        <Select py="20px" placeholder='Select Qantity'  borderRadius='0'>
                             <option value='1'>1</option>
                             <option value='2'>2</option>
                             <option value='3'>3</option>
@@ -96,7 +98,7 @@ const DiscountSection = () => {
                         </HStack>
                     </VStack>
                 </Box>
-            </Stack>
+            </Box>
         </>
     )
 }

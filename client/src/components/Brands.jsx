@@ -4,44 +4,62 @@ import Samsung from '../Assets/Images/brands/samsung.png'
 import Infinix from '../Assets/Images/brands/Infinix.webp'
 import Realme from '../Assets/Images/brands/realme.webp'
 import Audionic from '../Assets/Images/brands/audionic.webp'
-import { Box, Heading, Image, Stack } from '@chakra-ui/react'
+import Lenevo from '../Assets/Images/brands/lenevo.png'
+import { Box, Grid, Heading, Image } from '@chakra-ui/react'
 const Brands = () => {
     const [brands] = useState([
         {
-            logo: Apple
+            logo: Apple,
+            name: 'apple'
         },
         {
-            logo: Samsung
+            logo: Samsung,
+            name: 'samsung'
         },
         {
-            logo: Infinix
+            logo: Infinix,
+            name: 'infinix'
         },
         {
-            logo: Realme
+            logo: Realme,
+            name: 'realme'
         },
         {
-            logo: Audionic
+            logo: Audionic,
+            name: 'audionic'
         },
+        {
+            logo: Lenevo,
+            name: 'lenevo'
+        }
     ])
     return (
         <>
             <Heading my="20px" color={"teal"}>
                 Brands
             </Heading>
-
-            <Stack my="20px" align='stretch' direction={['column', 'row']}>
+            <Grid templateColumns={{
+                base: 'repeat(1, 1fr)',
+                md: 'repeat(2, 1fr)',
+                lg: 'repeat(6, 1fr)',
+            }}
+                gap={6}
+                gridAutoFlow="dense"
+                justifyContent="center"
+                alignItems="center" >
                 {
                     React.Children.toArray(
                         brands.map((brand) => {
                             return (
-                                <Box height={"200px"} borderRadius={"20px"} bgColor={"gray.100"} shadow={"lg"}>
-                                    <Image width={"100%"}  height={"100%"} mixBlendMode={"darken"} aspectRatio={"2/1"} objectFit={"contain"} src={brand.logo} />
+                                <Box id={brand.name} height={"200px"} link="" borderRadius={"20px"} bgColor={"gray.100"} shadow={"lg"}>
+                                    <Image width={"100%"} height={"100%"} mixBlendMode={"darken"} aspectRatio={"2/1"} objectFit={"contain"} src={brand.logo} />
                                 </Box>
                             )
                         })
                     )
                 }
-            </Stack>
+            </Grid>
+
         </>
     )
 }

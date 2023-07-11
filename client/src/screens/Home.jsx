@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <>
             <Banner />
-            <Box px="150px">
+            <Box mx={{ lg: "150px", md: "50px", base: "10px" }}>
                 <DiscountSection />
                 <Brands />
             </Box>
